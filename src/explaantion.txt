@@ -1,0 +1,151 @@
+import React, { useRef, useEffect } from "react";
+import useWindowSize from "./hooks/useWindowSize";
+import images from "./images/images";
+//
+//
+
+function App() {
+  // HOOK
+  const size = useWindowSize();
+  //
+  //
+  // the useRef must to be added to the respective className , in order to reach these className and make the effect work
+  //  REF
+  const app = useRef();
+  const scrollContainer = useRef();
+
+  //------------------------
+  // 'skewConfigs'
+  //------------------------
+  //
+  const skewConfigs = {
+    ease: 1,
+    current: 0,
+    previous: 0,
+    rounded: 0,
+  };
+
+  /*
+  The first step is to prevent the scrolling from the app , for that you have to add some additional scss styles
+  so that the page DONT SCROLL while you work on the effect
+  
+  */
+  //------------------------
+  //
+  //------------------------
+  //
+  useEffect(() => {
+    console.log(size.height);
+
+    document.body.style.height = `${
+      scrollContainer.current.getBoundingClientRect().height
+    }px`;
+  }, [size.height]);
+  //
+
+  useEffect(() => {
+    requestAnimationFrame(() => skewScrolling());
+  }, []);
+
+  //------------------------
+  // MATH / scroll Position
+  //------------------------
+
+  /*
+  MATH to determine some sort of 
+  difference in terms of the scroll POS 
+  as well as the previous.
+
+  before the following go up and add some configuration 'skewConfigs'
+that then will be linked to what will do here:
+
+  
+  */
+  const skewScrolling = () => {
+    skewConfigs.current = window.scrollY;
+    skewConfigs.previous +=
+      (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease; //represent the previous position of the scroll
+    skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100;
+
+    // variables for the velocity
+    //
+    const difference = skewConfigs.current - skewConfigs.rounded;
+    const acceleration = difference / size.width;
+    const velocity = +acceleration;
+    const skew = velocity * 7.5;
+
+    //
+    //
+    //
+    scrollContainer.current.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0) skewY(${skew}deg)`;
+    //
+    //
+    //
+
+    requestAnimationFrame(() => skewScrolling());
+    //
+    //
+    //
+  };
+
+  /*
+After adding the following:
+
+      scrollContainer.current.getBoundingClientRect().height
+
+
+got to the browser and check the elements , in the body if you click on it 
+you will notice that it has a height of 8951 or something like that, also if you try to scroll you will see
+that the bar will scroll but on the page but not on the content
+
+height: 8951.25px;
+
+AFTER THIS you are going to add a dependency, in the same block/useEffect you will add the dependency 
+related to the height of the browser more specifically if the height of the browser were to change,
+this is connected to the data inside the useWindowSize.js ,that data is a HOOK to be used like so:
+
+1 import that hook
+
+import  useWindowSize from "./hooks/useWindowSize";
+
+2 use the this hook:
+function App() {
+  // HOOK
+  const size = useWindowSize();
+
+  3 ADD the hook as a dependency
+    useEffect(() => {
+    document.body.style.height = `${
+      scrollContainer.current.getBoundingClientRect().height
+    }px`;
+  }, [size.height]);
+
+
+
+So what is going to happend after adding that dependency hook:
+
+Everytime the height of our viewport changes we are going to then set the body's
+height to the exact same value of the scrollContainer height
+
+
+  
+  */
+
+  return (
+    <div ref={app} className="App">
+      <div ref={scrollContainer} className="scroll">
+        {images.map((image, index) => (
+          <>
+            <div key={index} className="img-container">
+              <img src={image} alt={`people ${index}`} />
+            </div>
+            <h2>
+              Skewww <span className="outline"> Scroll</span>
+            </h2>
+          </>
+        ))}
+      </div>
+    </div>
+  );
+}
+export default App;
