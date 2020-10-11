@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-smooth-skew-scrolling/static/css/main.0a039eeb.chunk.css",
+    "main.js": "/react-smooth-skew-scrolling/static/js/main.222fabb5.chunk.js",
+    "main.js.map": "/react-smooth-skew-scrolling/static/js/main.222fabb5.chunk.js.map",
+    "runtime-main.js": "/react-smooth-skew-scrolling/static/js/runtime-main.be446fd5.js",
+    "runtime-main.js.map": "/react-smooth-skew-scrolling/static/js/runtime-main.be446fd5.js.map",
+    "static/js/2.03d1e96a.chunk.js": "/react-smooth-skew-scrolling/static/js/2.03d1e96a.chunk.js",
+    "static/js/2.03d1e96a.chunk.js.map": "/react-smooth-skew-scrolling/static/js/2.03d1e96a.chunk.js.map",
+    "index.html": "/react-smooth-skew-scrolling/index.html",
+    "precache-manifest.f4790197f444928960fa43ba6474829d.js": "/react-smooth-skew-scrolling/precache-manifest.f4790197f444928960fa43ba6474829d.js",
+    "service-worker.js": "/react-smooth-skew-scrolling/service-worker.js",
+    "static/css/main.0a039eeb.chunk.css.map": "/react-smooth-skew-scrolling/static/css/main.0a039eeb.chunk.css.map",
+    "static/js/2.03d1e96a.chunk.js.LICENSE.txt": "/react-smooth-skew-scrolling/static/js/2.03d1e96a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.be446fd5.js",
+    "static/js/2.03d1e96a.chunk.js",
+    "static/css/main.0a039eeb.chunk.css",
+    "static/js/main.222fabb5.chunk.js"
+  ]
+}
