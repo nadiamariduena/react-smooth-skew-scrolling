@@ -100,10 +100,63 @@ you have to apply the following to the children div's in this case the .scroll
 
 #### CPU related comments
 
-##### using the translate3d is a good idea when you want to leverage the CPU since it's using GPU driven animation
+###### using the translate3d is a good idea when you want to leverage the CPU since it's using GPU driven animation
 
 <br>
 <br>
+
+## KEY POINTS for the animation
+
+````javascript
+const skewScrolling = () => {
+    skewConfigs.current = window.scrollY;
+    skewConfigs.previous +=
+      (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease; //represent the previous position of the scroll
+    skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100;
+
+
+  /*
+   ------------------------
+   MATH / scroll Position
+   ------------------------
+
+  MATH to determine some sort of
+  difference in terms of the scroll POS
+  as well as the previous.
+
+
+math.round will round an integer to the nearest
+https://www.w3schools.com/jsref/jsref_round.asp
+
+Math.round(2.5);  
+result:  2.49 will be rounded down (2), and 2.5 will be rounded up (3).
+  */
+
+
+    // variables for the velocity
+    //
+    const difference = skewConfigs.current - skewConfigs.rounded;
+    const acceleration = difference / size.width;
+    const velocity = +acceleration;
+    const skew = velocity * 7.5;
+
+    //
+    //
+    //
+    scrollContainer.current.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0) skewY(${skew}deg)`;
+    //
+    //
+    //
+
+    requestAnimationFrame(() => skewScrolling());
+
+
+
+
+
+
+
+
 
 ## :bee: Dependencies
 
@@ -124,7 +177,7 @@ npm i autoprefixer@9.8.0
 npm i gh-pages --save-dev
 
 npm i framer-motion
-```
+````
 
 ##### Tutorial by: Wrong Akram , Math data by Jesper Landberg
 
