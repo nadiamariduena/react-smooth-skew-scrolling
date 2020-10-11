@@ -128,4 +128,4 @@ npm i framer-motion
 
 ##### Tutorial by: Wrong Akram , Math data by Jesper Landberg
 
-<a herf="https://jesperlandberg.dev/" target="_blank">website </a>
+<a href="https://jesperlandberg.dev/" target="_blank">website </a>
