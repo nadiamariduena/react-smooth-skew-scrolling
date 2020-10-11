@@ -18,6 +18,27 @@ h2 {
 }
 
 .App {
+  /*
+ smooth scrolling TIPS / WARNING!!
+
+you have to apply the following to the children div's in this case the .scroll
+
+ If you want to use this effect in already existent projects where you already have a fixed height
+ , you will have to delete that height and replace it for a padding that will help the content to
+ expand depending of what you have, this padding will give the content a certain amount of space in case
+ the content isn't sufficient.
+  */
+
+  // -----------
+  // this set up here is so that it dont move, at this stage if you check the browser you cannot longer scroll
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  // -----------
+
   .scroll {
     padding: 2vh 0;
     pointer-events: none;
