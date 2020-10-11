@@ -107,7 +107,7 @@ you have to apply the following to the children div's in this case the .scroll
 
 ## KEY POINTS for the animation
 
-````javascript
+```javascript
 const skewScrolling = () => {
     skewConfigs.current = window.scrollY;
     skewConfigs.previous +=
@@ -128,7 +128,7 @@ const skewScrolling = () => {
 math.round will round an integer to the nearest
 https://www.w3schools.com/jsref/jsref_round.asp
 
-Math.round(2.5);  
+Math.round(2.5);
 result:  2.49 will be rounded down (2), and 2.5 will be rounded up (3).
   */
 
@@ -149,14 +149,7 @@ result:  2.49 will be rounded down (2), and 2.5 will be rounded up (3).
     //
 
     requestAnimationFrame(() => skewScrolling());
-
-
-
-
-
-
-
-
+```
 
 ## :bee: Dependencies
 
@@ -177,7 +170,7 @@ npm i autoprefixer@9.8.0
 npm i gh-pages --save-dev
 
 npm i framer-motion
-````
+```
 
 ##### Tutorial by: Wrong Akram , Math data by Jesper Landberg
 
