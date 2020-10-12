@@ -2,6 +2,14 @@
 
 #### Tutorial about how to make a nice effect when scrolling
 
+<br>
+<br>
+
+![rested](./src/images/preview-scroll.gif)
+
+<br>
+<br>
+
 <p>In this project i will continue my training in Hooks, so i will be using Use Effect and other hooks such as:</p>
 
 <ul>
