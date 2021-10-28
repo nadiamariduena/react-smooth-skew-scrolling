@@ -1,6 +1,8 @@
 ## REACT SMOOTH SKEW SCROLLING
 
-#### Tutorial about how to make a nice effect when scrolling
+## Tutorial by: [Wrong Akram](https://www.youtube.com/watch?v=Dz6Sg630I8M)
+### The Math data: by Jesper Landberg
+
 
 <br>
 <br>
@@ -180,6 +182,6 @@ npm i gh-pages --save-dev
 npm i framer-motion
 ```
 
-##### Tutorial by: Wrong Akram , Math data by Jesper Landberg
+## Tutorial by: Wrong Akram , Math data by Jesper Landberg
 
 <a href="https://jesperlandberg.dev/" target="_blank">website </a>
